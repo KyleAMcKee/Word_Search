@@ -1,5 +1,11 @@
 const isValidInput = (string) => {
-    return /^[A-Z,]+$/.test(string);
+    let lines = string.split('\n');
+    for (let line of lines) {
+        if (!/^[A-Z,]+$/.test(line)) {
+            return false;
+        }
+    }
+    return true
 }
 
 const printUsageToStdout = (code) => {
