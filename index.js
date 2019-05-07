@@ -26,6 +26,11 @@ const parsePuzzle = (input) => {
     for (let line of puzzle) {
         result.push(line.split(','));
     }
+    if (!utils.isValidPuzzleDimensions(result)) {
+        utils.printUsageToStdout(3);
+        process.exitCode = 1;
+        return;
+    }
     return result;
 }
 

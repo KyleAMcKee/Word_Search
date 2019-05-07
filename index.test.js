@@ -65,4 +65,12 @@ test('parsePuzzle function should return an array of arrays of letters', () => {
                                     ['O', 'G', 'C','W', 'W', 'H','P', 'W', 'N','O']
                                 ]
     ); 
-})
+});
+
+test('If puzzle dimensions are not square return false', () => {
+    const testFile = 'test_files/not_square.txt';
+    const data = functions.readFile(testFile);
+    const puzzleArray = functions.parsePuzzle(data);
+    const mockStdout = jest.spyOn(process.stdout, 'write');
+    expect(mockStdout).toHaveBeenCalledWith('Puzzle dimensions must be a square\n');
+});
