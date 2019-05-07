@@ -1,0 +1,22 @@
+{
+  "name": "word_search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleAMcKee/Word_Search.git"
+  },
+  "author": "Kyle McKee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyleAMcKee/Word_Search/issues"
+  },
+  "homepage": "https://github.com/KyleAMcKee/Word_Search#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
