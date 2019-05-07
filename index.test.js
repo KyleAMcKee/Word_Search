@@ -30,7 +30,6 @@ test('parseWords function should return an array', () => {
     const testFile = 'test_files/simpsons.txt';
     const data = functions.readFile(testFile);
     const wordArray = functions.parseWords(data);
-    console.log(data);
     expect(Array.isArray(wordArray)).toBe(true);
 });
 
@@ -39,4 +38,31 @@ test('parsePuzzle function should return a 2D array', () => {
     const data = functions.readFile(testFile);
     const puzzleArray = functions.parsePuzzle(data);
     expect(Array.isArray(puzzleArray)).toBe(true);
+    expect(Array.isArray(puzzleArray[0])).toBe(true);
 });
+
+test('parseWords function should return an array of strings', () => {
+    const testFile = 'test_files/simpsons.txt';
+    const data = functions.readFile(testFile);
+    const wordsArray = functions.parseWords(data);
+    expect(wordsArray).toEqual(['HOMER','MARGE','BART','LISA','MAGGIE']);
+});
+
+test('parsePuzzle function should return an array of arrays of letters', () => {
+    const testFile = 'test_files/simpsons.txt';
+    const data = functions.readFile(testFile);
+    const puzzleArray  = functions.parsePuzzle(data);
+    expect(puzzleArray).toEqual([
+                                    ['E', 'I', 'B','E', 'N', 'I','H', 'H', 'L','X'],
+                                    ['I', 'V', 'R','N', 'L', 'Y','N', 'Z', 'I','J'],
+                                    ['G', 'M', 'J','A', 'N', 'H','B', 'I', 'S','P'],
+                                    ['G', 'M', 'A','R', 'G', 'E','A', 'X', 'A','C'],
+                                    ['A', 'E', 'E','X', 'H', 'I','R', 'U', 'E','K'],
+                                    ['M', 'R', 'E','M', 'O', 'H','T', 'L', 'J','S'],
+                                    ['C', 'T', 'K','Z', 'M', 'J','Q', 'N', 'L','X'],
+                                    ['E', 'T', 'J','K', 'X', 'X','E', 'O', 'Z','H'],
+                                    ['K', 'Y', 'S','V', 'V', 'S','O', 'X', 'Y','P'],
+                                    ['O', 'G', 'C','W', 'W', 'H','P', 'W', 'N','O']
+                                ]
+    ); 
+})

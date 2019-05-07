@@ -16,11 +16,17 @@ const readFile = (filePath) => {
 }
 
 const parseWords = (input) => {
-    return [];
+    let firstLine = input.split('\n')[0];
+    return firstLine.split(',');
 }
 
 const parsePuzzle = (input) => {
-    return [[]];
+    let puzzle = input.split('\n').slice(1);
+    let result = [];
+    for (let line of puzzle) {
+        result.push(line.split(','));
+    }
+    return result;
 }
 
 module.exports = {
