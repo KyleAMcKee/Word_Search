@@ -5,11 +5,10 @@ const readFile = (filePath) => {
     const data = fs.readFileSync(filePath, 'utf8');
     if (!data) {
         utils.printUsageToStdout(1)
-        process.exitCode = 1;
-        return;
+        process.exit(1);
     } else if (!utils.isValidInput(data)) {
         utils.printUsageToStdout(2);
-        process.exitCode = 1;
+        process.exit(1);
         return;
     }
     return data;
@@ -28,7 +27,7 @@ const parsePuzzle = (input) => {
     }
     if (!utils.isValidPuzzleDimensions(result)) {
         utils.printUsageToStdout(3);
-        process.exitCode = 1;
+        process.exit(1);
         return;
     }
     return result;

@@ -13,16 +13,24 @@ test('Read words line from file', () => {
 
 test('Exit if input is invalid because of restricted characters', () => {
     const testFile = 'test_files/invalid_chars.txt';
-    const mockStdout = jest.spyOn(process.stdout, 'write');
+    const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation(() => {});
+    const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
     functions.readFile(testFile);
     expect(mockStdout).toHaveBeenCalledWith('Input file must only contain capital letters separated by commas\n');
+    expect(mockExit).toHaveBeenCalledWith(1);
+    mockExit.mockRestore();
+    mockStdout.mockRestore();
 });
 
 test('Input file should not be empty', () => {
     const testFile = 'test_files/empty.txt';
-    const mockStdout = jest.spyOn(process.stdout, 'write');
+    const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation(() => {});
+    const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
     functions.readFile(testFile);
     expect(mockStdout).toHaveBeenCalledWith('Input file must not be empty\n');
+    expect(mockExit).toHaveBeenCalledWith(1);
+    mockExit.mockRestore();
+    mockStdout.mockRestore();
 });
 
 /* --- INPUT PARSING --- */
@@ -69,8 +77,12 @@ test('parsePuzzle function should return an array of arrays of letters', () => {
 
 test('If puzzle dimensions are not square return false', () => {
     const testFile = 'test_files/not_square.txt';
+    const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation(() => {});
+    const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
     const data = functions.readFile(testFile);
     const puzzleArray = functions.parsePuzzle(data);
-    const mockStdout = jest.spyOn(process.stdout, 'write');
     expect(mockStdout).toHaveBeenCalledWith('Puzzle dimensions must be a square\n');
+    expect(mockExit).toHaveBeenCalledWith(1);
+    mockExit.mockRestore();
+    mockStdout.mockRestore()
 });
