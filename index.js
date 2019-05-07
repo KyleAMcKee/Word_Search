@@ -15,6 +15,16 @@ const readFile = (filePath) => {
     return data;
 }
 
+const parseWords = (input) => {
+    return [];
+}
+
+const parsePuzzle = (input) => {
+    return [[]];
+}
+
 module.exports = {
     readFile,
+    parseWords,
+    parsePuzzle
 }

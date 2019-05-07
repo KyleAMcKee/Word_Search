@@ -24,3 +24,19 @@ test('Input file should not be empty', () => {
     functions.readFile(testFile);
     expect(mockStdout).toHaveBeenCalledWith('Input file must not be empty\n');
 });
+
+/* --- INPUT PARSING --- */
+test('parseWords function should return an array', () => {
+    const testFile = 'test_files/simpsons.txt';
+    const data = functions.readFile(testFile);
+    const wordArray = functions.parseWords(data);
+    console.log(data);
+    expect(Array.isArray(wordArray)).toBe(true);
+});
+
+test('parsePuzzle function should return a 2D array', () => {
+    const testFile = 'test_files/simpsons.txt';
+    const data = functions.readFile(testFile);
+    const puzzleArray = functions.parsePuzzle(data);
+    expect(Array.isArray(puzzleArray)).toBe(true);
+});
