@@ -1,3 +1,5 @@
+const { Trie, TrieNode } = require('./trie');
+
 const findPossibleNodes = (puzzle, coordinates) => {
     let directions =    [
                             {x: -1, y: -1}, {x: 0, y: -1}, {x: 1, y: -1},
@@ -21,6 +23,44 @@ const findPossibleNodes = (puzzle, coordinates) => {
     return result;
 }
 
+const explorePath = (puzzle, trieNode, direction) => {
+    let result = {};
+    return result;
+}
+
+const findWords = (puzzle, root, possibleNodes) => {
+    let result = [];
+    possibleNodes.forEach(node => {
+        explorePath(puzzle, root, 1);
+    });
+    return result;
+}
+
+const puzzleSolve = (puzzle, trie) => {
+    let rowMax = puzzle.length;
+    let colMax = puzzle[0].length;
+    let result = [];
+
+    for (let row = 0; row < rowMax; row++) {
+        for (let col = 0; col < colMax; col++) {
+            let currentChar = puzzle[row][col];
+            if (currentChar in trie.root.children) {
+
+            }
+        }
+    }
+    return result;
+}
+
+const puzzle =  [
+    ['A','B', 'C'],
+    ['D', 'E', 'F'],
+    ['G', 'H', 'I']
+];
+
 module.exports = {
-    findPossibleNodes
+    findPossibleNodes,
+    puzzleSolve,
+    findWords,
+    explorePath
 }

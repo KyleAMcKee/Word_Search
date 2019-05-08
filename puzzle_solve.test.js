@@ -1,4 +1,5 @@
-const { findPossibleNodes } = require('./puzzle_solve');
+const { findPossibleNodes, puzzleSolve, findWords, explorePath } = require('./puzzle_solve');
+const { Trie } = require('./trie');
 
 describe('Given the coordinates (0, 0)', () => {
     const coordinates = {x: 0, y: 0};
@@ -67,5 +68,28 @@ describe('Given the coordinates (2, 2)', () => {
     });
     test('findPossibleNodes should return (1,1), (2,1), (1,2)', () => {
         expect(findPossibleNodes(puzzle, coordinates)).toEqual(expectedResult);
+    });
+});
+
+describe('When given input', () => {
+    const puzzle =  [
+        ['A','B', 'C'],
+        ['D', 'E', 'F'],
+        ['G', 'H', 'I']
+    ];
+    const coordinates = {x: 1, y: 1};
+    const trie = new Trie;
+    let possibleNodes = findPossibleNodes(puzzle, coordinates);
+
+    test('puzzleSolve should return an array', () => {
+        expect(Array.isArray(puzzleSolve(puzzle, trie))).toBeTruthy();
+    });
+
+    test('findWords should return an array', () => {
+        expect(Array.isArray(findWords(puzzle, trie, possibleNodes))).toBeTruthy();
+    });
+
+    test('explorePath should return an object', () => {
+        expect(typeof explorePath(puzzle, trie.root, 1) === 'object').toBeTruthy();
     });
 });
