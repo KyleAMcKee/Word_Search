@@ -21,6 +21,8 @@ const printUsageToStdout = (code) => {
         process.stdout.write('Puzzle dimensions must be a square\n');
     } else if (code === 4) {
         process.stdout.write('Input file must contain a puzzle grid\n');
+    } else if (code === 5) {
+        process.stdout.write('Usage: node app.js [file path] [optional: print board]\n');
     }
 }
 
