@@ -1,6 +1,6 @@
-const { Trie } = require('./trie');
-const { puzzleSolve } = require('./puzzle_solve');
-const { readFile, parseWords, parsePuzzle } = require('./index');
+const { Trie } = require('./src/trie');
+const { puzzleSolve } = require('./src/puzzle_solve');
+const { readFile, parseWords, parsePuzzle } = require('./src/parse');
 
 const calculateResult = (filePath) => {
     let file = readFile(filePath);

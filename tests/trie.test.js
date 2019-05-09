@@ -1,4 +1,4 @@
-const { Trie, TrieNode } = require('./trie'); 
+const { Trie, TrieNode } = require('../src/trie'); 
 
 describe('Newly created trie', () => {
     let trie = new Trie;

@@ -1,4 +1,4 @@
-const functions = require('./index');
+const functions = require('../src/parse');
 
 
 /* --- FILE INPUT --- */

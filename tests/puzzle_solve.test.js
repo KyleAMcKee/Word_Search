@@ -1,5 +1,5 @@
-const { findPossibleNodes, puzzleSolve, findWords, explorePath } = require('./puzzle_solve');
-const { Trie } = require('./trie');
+const { findPossibleNodes, puzzleSolve, findWords, explorePath } = require('../src/puzzle_solve');
+const { Trie } = require('../src/trie');
 
 describe('Given the coordinates (0, 0)', () => {
     const coordinates = {x: 0, y: 0};

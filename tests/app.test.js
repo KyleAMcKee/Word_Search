@@ -1,4 +1,4 @@
-const { calculateResult } = require('./app');
+const { calculateResult } = require('../app');
 
 test('When given valid input, calculateResult returns an array', () => {
     const filePath = './test_files/large.txt';
