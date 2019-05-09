@@ -19,6 +19,8 @@ const printUsageToStdout = (code) => {
         process.stdout.write('Input file must only contain capital letters separated by commas\n');
     } else if (code === 3) {
         process.stdout.write('Puzzle dimensions must be a square\n');
+    } else if (code === 4) {
+        process.stdout.write('Input file must contain a puzzle grid\n');
     }
 }
 

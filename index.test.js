@@ -10,6 +10,18 @@ test('Read words line from file', () => {
     const testFile = 'test_files/simpsons_one_line.txt';
     expect(functions.readFile(testFile)).toBe('HOMER,MARGE,BART,LISA,MAGGIE');
 });
+test('Input file should contain a puzzle grid', () => {
+    const testFile = 'test_files/simpsons_one_line.txt';
+    const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation(() => {});
+    const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
+    const data = functions.readFile(testFile);
+    functions.parsePuzzle(data);
+    expect(mockStdout).toHaveBeenCalledWith('Input file must contain a puzzle grid\n');
+    expect(mockExit).toHaveBeenCalledWith(1);
+    mockExit.mockRestore();
+    mockStdout.mockRestore();
+
+});
 
 test('Exit if input is invalid because of restricted characters', () => {
     const testFile = 'test_files/invalid_chars.txt';
@@ -26,12 +38,13 @@ test('Input file should not be empty', () => {
     const testFile = 'test_files/empty.txt';
     const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation(() => {});
     const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
-    functions.readFile(testFile);
+    const puzzle = functions.readFile(testFile);
     expect(mockStdout).toHaveBeenCalledWith('Input file must not be empty\n');
     expect(mockExit).toHaveBeenCalledWith(1);
     mockExit.mockRestore();
     mockStdout.mockRestore();
 });
+
 
 /* --- INPUT PARSING --- */
 test('parseWords function should return an array', () => {
