@@ -15,16 +15,37 @@ brew install python
 pip install beautifulsoup4
 ```
 
+```
+On Linux:
+sudo apt-get install nodejs npm
+
+Optional:
+sudo apt-get install python3.6
+pip install beautifulsoup4
+```
+
+```
+On Windows:
+[Download](https://nodejs.org/en/download/) - download and install NodeJS here
+
+Optional:
+[Download](https://www.python.org/downloads/windows/) - download and install Python here
+pip install beautifulsoup4
+```
+
+
 ### Installing
 
-To begin clone the repository and install the dependencies for Node
+To begin clone the repository and install the dependencies for the project
 
 
 ```
+git clone <this repository> <name>
+cd <name>
 npm install
 ```
 
-Optionally you can generate test data by running generate_puzzle.py
+Optionally you can generate test data by running generate_puzzle.py if Python3 and Beautiful Soup are present
 
 ```
 python scripts/generate_puzzle.py <height> <number of words> <file name>
@@ -40,17 +61,19 @@ npm test
 
 ## Running the program
 
-To run the program with randomly generated input:
+To run the program with your own input:
+
+```
+node app.js <file name> <optional: -b or --board>
+```
+
+To run the program with randomly generated input (python3 and bs4 must be installed):
 
 ```
 npm run demo
 ```
 
-To run the program with your own input:
 
-```
-node app.js <file name> <optional: print board (-b)>
-```
 
 ## Built With
 
@@ -59,7 +82,7 @@ node app.js <file name> <optional: print board (-b)>
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgements
 
