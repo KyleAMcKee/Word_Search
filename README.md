@@ -43,7 +43,7 @@ npm test
 To run the program with randomly generated input:
 
 ```
-node app.js <file name> <optional: print board (-b)>
+npm run demo
 ```
 
 To run the program with your own input:
