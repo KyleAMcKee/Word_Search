@@ -26,10 +26,10 @@ pip install beautifulsoup4
 
 ```
 On Windows:
-[Download](https://nodejs.org/en/download/) - download and install NodeJS here
+https://nodejs.org/en/download/ - download and install NodeJS here
 
 Optional:
-[Download](https://www.python.org/downloads/windows/) - download and install Python here
+https://www.python.org/downloads/windows/ - download and install Python here
 pip install beautifulsoup4
 ```
 
