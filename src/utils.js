@@ -1,7 +1,7 @@
 const isValidInput = (string) => {
     let lines = string.split('\n');
     for (let line of lines) {
-        if (!/^[A-Z,]+$/.test(line)) {
+        if (!/^[A-Z,\r]+$/.test(line)) {
             return false;
         }
     }

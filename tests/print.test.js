@@ -23,5 +23,5 @@ test('Given a word and coordinate array, printResults will print formatted outpu
                         ];
     const mockStdout = jest.spyOn(process.stdout, 'write').mockImplementation(() => {});
     printResults(wordArray);
-    expect(mockStdout).toHaveBeenCalledWith('LUKE: (1,1),(2,2),(3,3),(4,4)\nHAN: (0,1),(0,2),(0,3)\n');
+    expect(mockStdout).toHaveBeenCalledWith('\x1b[34mLUKE\x1b[0m: (1,1),(2,2),(3,3),(4,4)\n\x1b[31mHAN\x1b[0m: (0,1),(0,2),(0,3)\n');
 });

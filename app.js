@@ -19,6 +19,10 @@ const calculateResult = (filePath) => {
     return result;
 }
 
-const result = calculateResult(process.argv[2]);
-printResults(result);
-process.argv[3] ? printBoard(puzzle, result) : 0;
+const results = calculateResult(process.argv[2]);
+printResults(results);
+if (process.argv[3]) {
+    (process.argv[3] == '--board' || process.argv[3] == '-b') 
+        ? printBoard(puzzle, results) 
+        : process.stdout.write('Use --board or -b as an optional argument to print the board\n')
+}
