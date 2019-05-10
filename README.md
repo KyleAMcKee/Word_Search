@@ -1,6 +1,6 @@
 # Word Search
 
-Program in NodeJS that will return the location of words in a word search as well as an optional visual representation highlighting where they are located.
+This is a program built in NodeJS that will return the location of words in a word search. It will also optionally return the puzzle board with found words highlighted.
 
 ### Prerequisites
 
@@ -40,6 +40,12 @@ npm test
 
 ## Running the program
 
+To run the program with randomly generated input:
+
+```
+node app.js <file name> <optional: print board (-b)>
+```
+
 To run the program with your own input:
 
 ```
@@ -58,4 +64,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgements
 
 * [Discovery](http://puzzlemaker.discoveryeducation.com/WordSearchSetupForm.asp) - Test puzzle creation
-* [Creativity Games] (https://creativitygames.net/random-word-generator/randomwords/) - Random word generation
+* [Creativity Games](https://creativitygames.net/random-word-generator/randomwords/) - Random word generation
