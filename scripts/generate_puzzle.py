@@ -5,7 +5,7 @@ from urllib.request import Request, urlopen
 try:
     from bs4 import BeautifulSoup
 except:
-    print('BeatifulSoup module is required to run this script. Try pip3 install beautiful soup')
+    print('BeatifulSoup module is required to run this script. Try pip3 install beautifulsoup4')
 
 
 """
