@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "demo": "python3 scripts/generate_puzzle.py 15 10 demo_test && node app.js test_files/demo_test.txt -b"
   },
   "repository": {
     "type": "git",

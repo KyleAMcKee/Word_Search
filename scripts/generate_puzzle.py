@@ -1,7 +1,11 @@
+import argparse
+import sys
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup
-import argparse
+try:
+    from bs4 import BeautifulSoup
+except:
+    print('BeatifulSoup module is required to run this script. Try pip3 install beautiful soup')
 
 
 """
@@ -62,4 +66,4 @@ full_puzzle = (word_str + puzzle).rstrip('\r\n')
 with open('test_files/' + args.file_name + '.txt', 'w', newline='\n') as file:
     file.write(full_puzzle)
 
-
+print('Puzzle successfully created! Saved in test_files/{0}.txt\n'.format(args.file_name))
